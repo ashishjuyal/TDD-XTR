@@ -2,8 +2,11 @@ package tdd.xtr;
 
 public class StringCalculator {
 
-	public Object checksum(String string) {
-		return string;
+	public int checksum(String string) {
+		if(string.isEmpty()){
+			return 0; 
+		}
+		return Integer.parseInt(string);
 	}
 
 }
