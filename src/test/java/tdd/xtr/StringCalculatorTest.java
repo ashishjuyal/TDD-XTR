@@ -39,18 +39,23 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void should_show_3_with_12() {
+	public void should_show_3_with_1comma2() {
 		StringCalculator strCalculator = new StringCalculator();
 		assertEquals("3", strCalculator.evaluate("1,2"));
 	}
 	
 	@Test
-	public void should_show_6_with_123() {
+	public void should_show_6_with_1comma2comma3() {
 		StringCalculator strCalculator = new StringCalculator();
 		assertEquals("6", strCalculator.evaluate("1,2,3"));
 	}
 	
 	
+	@Test
+	public void should_3_with_1newline2() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("6", strCalculator.evaluate("1\n2"));
+	}
 	
 	
 	private class StringCalculator {
