@@ -10,7 +10,11 @@ public class FizzBuzz {
 	
 	public String myMethod() {
 		
-		if(num%3 == 0) {
+		if(num%15 == 0) {
+			return "FizzBuzz";
+		}
+		
+		else if(num%3 == 0) {
 			return "Fizz";
 		}
 		
@@ -18,7 +22,10 @@ public class FizzBuzz {
 			return "Buzz";
 		}
 		
-		return String.valueOf(num);
+		else {
+			return String.valueOf(num);
+		}
+		
 	}
 	
 }
