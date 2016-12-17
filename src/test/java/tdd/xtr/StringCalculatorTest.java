@@ -51,11 +51,21 @@ public class StringCalculatorTest {
 		
 		public String evaluate(String toEvaluate) {
 			
+			String[] numbers;
+			
 			if(toEvaluate.equals("1")) {
 				return toEvaluate;
 			}
 			else if(toEvaluate.equals("-1")) {
 				throw new StringCalcException("-1");
+			}
+			else if(toEvaluate.contains(",")) {
+				int sum = 0;
+				numbers = toEvaluate.split(",");
+				for (String val : numbers) {
+					sum += Integer.valueOf(val);
+				}
+				return String.valueOf(sum);
 			}
 			else {
 				return "0";
