@@ -28,4 +28,7 @@ public class FizzBuzz {
 		
 	}
 	
+	public boolean equals(FizzBuzz obj) {
+		return obj.num == num;
+	}
 }
