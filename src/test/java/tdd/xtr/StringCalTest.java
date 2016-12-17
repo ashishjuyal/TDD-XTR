@@ -24,8 +24,9 @@ public class StringCalTest {
 	}
 	
 	@Test
-	public void check_sum_two_positive_number(){
+	public void check_sum_for_commaseperated_positive_numbers(){
 		Assert.assertEquals(3,strcalc.checksum("1,2"));
+		Assert.assertEquals(6,strcalc.checksum("1,2,3"));
 	}
 
 }
