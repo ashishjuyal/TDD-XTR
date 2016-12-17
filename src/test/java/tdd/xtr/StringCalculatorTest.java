@@ -44,6 +44,12 @@ public class StringCalculatorTest {
 		assertEquals("3", strCalculator.evaluate("1,2"));
 	}
 	
+	@Test
+	public void should_show_6_with_123() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("6", strCalculator.evaluate("1,2,3"));
+	}
+	
 	
 	
 	
