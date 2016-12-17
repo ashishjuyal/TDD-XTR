@@ -18,6 +18,13 @@ public class FizzBuzzNitin {
 	public void should_fizz(){
 		FizzBuzzSrc fizzbuzz = new FizzBuzzSrc();
 		Assert.assertEquals("fizz",fizzbuzz.checkfizzbuzz(3));
+		Assert.assertEquals("fizz",fizzbuzz.checkfizzbuzz(6));
+	}
+	
+	@Test
+	public void should_buzz(){
+		FizzBuzzSrc fizzbuzz = new FizzBuzzSrc();
+		Assert.assertEquals("buzz",fizzbuzz.checkfizzbuzz(5));
 	}
 
 }
