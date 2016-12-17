@@ -38,6 +38,12 @@ public class StringCalculatorTest {
 		
 	}
 	
+	@Test
+	public void should_show_3_with_12() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("3", strCalculator.evaluate("1,2"));
+	}
+	
 	
 	
 	
