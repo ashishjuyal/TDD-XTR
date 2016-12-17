@@ -27,10 +27,24 @@ public class FizzBuzzTest {
 		obj = new FizzBuzz(4);//Arrange
 		assertFalse(obj.myMethod().equals("Fizz"));
 		
-		obj = new FizzBuzz(15);//Arrange
+	}
+	
+	@Test
+	public void should_return_Buzz() {
+		FizzBuzz obj = new FizzBuzz(5);//Arrange
+		assertTrue(obj.myMethod().equals("Buzz"));
+	}
+	
+	@Test
+	public void should_return_FizzBuzz() {
+		FizzBuzz obj = new FizzBuzz(15);//Arrange
 		assertTrue(obj.myMethod().equals("FizzBuzz"));
 	}
 	
-	
+	@Test
+	public void should_return_Number() {
+		FizzBuzz obj = new FizzBuzz(1);//Arrange
+		assertTrue(obj.myMethod().equals("1"));
+	}
 	
 }
