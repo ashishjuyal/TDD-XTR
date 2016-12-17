@@ -128,6 +128,10 @@ public class StringCalculatorTest {
 				numbers = toEvaluate.split(",|\n");
 				for (String val : numbers) {
 					
+					if(Integer.valueOf(val) > 1000) {
+						continue;
+					}
+					
 					if(Integer.valueOf(val) < 0) {
 						negativeValuesList.add(val);
 						containsNegativeValue = true;
