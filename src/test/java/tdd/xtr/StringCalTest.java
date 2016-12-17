@@ -34,7 +34,6 @@ public class StringCalTest {
 	@Test
 	public void check_sum_for_lineseperated_positive_numbers(){
 		Assert.assertEquals(3,strcalc.checksum("1\n2"));
-		
 	}
 
 }
