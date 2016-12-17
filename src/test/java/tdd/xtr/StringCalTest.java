@@ -27,7 +27,13 @@ public class StringCalTest {
 	public void check_sum_for_commaseperated_positive_numbers(){
 		Assert.assertEquals(3,strcalc.checksum("1,2"));
 		Assert.assertEquals(6,strcalc.checksum("1,2,3"));
-		Assert.assertEquals(6,strcalc.checksum("1\n2"));
+		Assert.assertEquals(3,strcalc.checksum("1\n2"));
+		
+	}
+	
+	@Test
+	public void check_sum_for_lineseperated_positive_numbers(){
+		Assert.assertEquals(3,strcalc.checksum("1\n2"));
 		
 	}
 
