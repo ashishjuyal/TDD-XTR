@@ -11,6 +11,12 @@ public class StringCalculatorTest {
 		assertEquals("0", strCalculator.evaluate(""));
 	}
 	
+	@Test
+	public void should_show_1_with_1() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("1", strCalculator.evaluate("1"));
+	}
+	
 	
 	
 	private class StringCalculator {
