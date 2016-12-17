@@ -26,6 +26,9 @@ public class FizzBuzzTest {
 		
 		obj = new FizzBuzz(4);//Arrange
 		assertFalse(obj.myMethod().equals("Fizz"));
+		
+		obj = new FizzBuzz(15);//Arrange
+		assertTrue(obj.myMethod().equals("FizzBuzz"));
 	}
 	
 	

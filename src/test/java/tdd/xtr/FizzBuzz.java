@@ -14,6 +14,10 @@ public class FizzBuzz {
 			return "Fizz";
 		}
 		
+		else if(num%5 == 0) {
+			return "Buzz";
+		}
+		
 		return String.valueOf(num);
 	}
 	
