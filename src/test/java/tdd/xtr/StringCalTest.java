@@ -37,9 +37,9 @@ public class StringCalTest {
 		Assert.assertEquals(6,strcalc.checksum("1\n2,3"));
 	}
 	
-	@Test(expected=Exception.class)
+	@Test(expected=RuntimeException.class)
 	public void expectedExceptionOnNegativeNumber(){
-		Assert.assertEquals(-1,strcalc.checksum("-1"));
+		strcalc.checksum("-1");
 	}
 	
 	

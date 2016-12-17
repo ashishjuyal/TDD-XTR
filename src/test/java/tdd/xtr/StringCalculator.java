@@ -6,6 +6,9 @@ public class StringCalculator {
 		if(string.isEmpty()){
 			return 0; 
 		}
+		if(string.contains("-")){
+			throw new RuntimeException();
+		}
 		String[] splitted=string.split(",|\n");
 		int sum=0;
 		for(String value:splitted){
