@@ -5,6 +5,10 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Rule;
 
 public class StringCalculatorTest {
@@ -75,6 +79,8 @@ public class StringCalculatorTest {
 	}
 	
 	
+	
+	
 	private class StringCalculator {
 		
 		public String evaluate(String toEvaluate) {
@@ -88,10 +94,26 @@ public class StringCalculatorTest {
 				throw new StringCalcException("-1");
 			}
 			else if(toEvaluate.contains(",") || toEvaluate.contains("\n")) {
+				
+				List<String> negativeValuesList = new ArrayList<String>();
+				
 				int sum = 0;
+				boolean containsNegativeValue = false;
 				numbers = toEvaluate.split(",|\n");
 				for (String val : numbers) {
-					sum += Integer.valueOf(val);
+					
+					if(Integer.valueOf(val) < 0) {
+						negativeValuesList.add(val);
+						containsNegativeValue = true;
+					}
+					if(!containsNegativeValue) {
+						sum += Integer.valueOf(val);
+					}
+					
+				}
+				if(negativeValuesList.size() > 0) {
+					System.out.println(Arrays.toString(negativeValuesList.toArray()));
+					throw new StringCalcException(Arrays.toString(negativeValuesList.toArray()));
 				}
 				return String.valueOf(sum);
 			}
