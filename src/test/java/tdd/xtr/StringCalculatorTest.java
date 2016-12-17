@@ -47,7 +47,10 @@ public class StringCalculatorTest {
 			
 			if(toEvaluate.equals("1")) {
 				return toEvaluate;
-			} 
+			}
+			else if(toEvaluate.equals("-1")) {
+				throw new StringCalcException("-1");
+			}
 			else {
 				return "0";
 			}
