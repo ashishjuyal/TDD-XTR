@@ -2,14 +2,19 @@ package tdd.xtr;
 
 public class FizzBuzz {
 
-	public int num;
+	private int num;
 	
 	public FizzBuzz(int num) {
 		this.num = num;
 	}
 	
 	public String myMethod() {
-		return "Fizz";
+		
+		if(num%3 == 0) {
+			return "Fizz";
+		}
+		
+		return String.valueOf(num);
 	}
 	
 }
