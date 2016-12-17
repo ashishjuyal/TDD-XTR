@@ -63,6 +63,17 @@ public class StringCalculatorTest {
 		assertEquals("6", strCalculator.evaluate("1\n2,3"));
 	}
 	
+	@Test
+	public void should_throw_exception_with_minus1comma2() {
+		
+		thrownExcep.expect(StringCalcException.class);
+		thrownExcep.expectMessage("-1");
+		
+		StringCalculator strCalculator = new StringCalculator();
+		strCalculator.evaluate("-1,2");
+		
+	}
+	
 	
 	private class StringCalculator {
 		
