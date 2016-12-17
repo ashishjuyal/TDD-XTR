@@ -47,4 +47,11 @@ public class FizzBuzzTest {
 		assertTrue(obj.myMethod().equals("1"));
 	}
 	
+	@Test
+	public void should_check_Equality() {
+		FizzBuzz obj1 = new FizzBuzz(1);//Arrange
+		FizzBuzz obj2 = new FizzBuzz(1);  
+		assertTrue(obj1.equals(obj2));
+	}
+	
 }
