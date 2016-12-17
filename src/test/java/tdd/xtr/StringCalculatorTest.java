@@ -54,7 +54,7 @@ public class StringCalculatorTest {
 	@Test
 	public void should_3_with_1newline2() {
 		StringCalculator strCalculator = new StringCalculator();
-		assertEquals("6", strCalculator.evaluate("1\n2"));
+		assertEquals("3", strCalculator.evaluate("1\n2"));
 	}
 	
 	
@@ -70,14 +70,15 @@ public class StringCalculatorTest {
 			else if(toEvaluate.equals("-1")) {
 				throw new StringCalcException("-1");
 			}
-			else if(toEvaluate.contains(",")) {
+			else if(toEvaluate.contains(",") || toEvaluate.contains("\n")) {
 				int sum = 0;
-				numbers = toEvaluate.split(",");
+				numbers = toEvaluate.split(",|\n");
 				for (String val : numbers) {
 					sum += Integer.valueOf(val);
 				}
 				return String.valueOf(sum);
 			}
+			
 			else {
 				return "0";
 			}
