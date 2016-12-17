@@ -1,7 +1,11 @@
 package tdd.xtr;
 
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.*;
+
+import org.junit.Rule;
 
 public class StringCalculatorTest {
 
@@ -17,6 +21,24 @@ public class StringCalculatorTest {
 		assertEquals("1", strCalculator.evaluate("1"));
 	}
 	
+	@Rule
+	public ExpectedException thrownExcep = ExpectedException.none();
+	
+	
+	@Test
+	public void should_throw_exception_with_minus1() {
+		
+		String num = "-1";
+		
+		thrownExcep.expect(StringCalcException.class);
+		thrownExcep.expectMessage(num);
+		
+		StringCalculator strCalculator = new StringCalculator();
+		strCalculator.evaluate(num);
+		
+	}
+	
+	
 	
 	
 	private class StringCalculator {
@@ -24,7 +46,7 @@ public class StringCalculatorTest {
 		public String evaluate(String toEvaluate) {
 			
 			if(toEvaluate.equals("1")) {
-				return "1";
+				return toEvaluate;
 			} 
 			else {
 				return "0";
