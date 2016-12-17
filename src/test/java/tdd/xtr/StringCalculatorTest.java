@@ -100,6 +100,12 @@ public class StringCalculatorTest {
 		
 	}
 	
+	@Test
+	public void should_show_2_with_2comma1001() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("2", strCalculator.evaluate("2,1001"));
+	}
+	
 	
 	private class StringCalculator {
 		
