@@ -16,7 +16,7 @@ public class StringCalculatorTest {
 	private class StringCalculator {
 		
 		public String evaluate(String toEvaluate) {
-			return null;
+			return "0";
 		}
 		
 	}
