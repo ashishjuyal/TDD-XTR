@@ -52,9 +52,15 @@ public class StringCalculatorTest {
 	
 	
 	@Test
-	public void should_3_with_1newline2() {
+	public void should_show_3_with_1newline2() {
 		StringCalculator strCalculator = new StringCalculator();
 		assertEquals("3", strCalculator.evaluate("1\n2"));
+	}
+	
+	@Test
+	public void should_show_6_with_1newline2comma3() {
+		StringCalculator strCalculator = new StringCalculator();
+		assertEquals("6", strCalculator.evaluate("1\n2,3"));
 	}
 	
 	
