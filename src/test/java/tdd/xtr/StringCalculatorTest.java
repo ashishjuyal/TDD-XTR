@@ -89,6 +89,17 @@ public class StringCalculatorTest {
 		
 	}
 	
+	@Test
+	public void should_throw_exception_with_minus1comma2newlineminus3() {
+		
+		thrownExcep.expect(StringCalcException.class);
+		thrownExcep.expectMessage("-1, -3");
+		
+		StringCalculator strCalculator = new StringCalculator();
+		strCalculator.evaluate("-1,2\n-3");
+		
+	}
+	
 	
 	private class StringCalculator {
 		
@@ -121,7 +132,7 @@ public class StringCalculatorTest {
 					
 				}
 				if(negativeValuesList.size() > 0) {
-					System.out.println(Arrays.toString(negativeValuesList.toArray()));
+//					System.out.println(Arrays.toString(negativeValuesList.toArray()));
 					throw new StringCalcException(Arrays.toString(negativeValuesList.toArray()));
 				}
 				return String.valueOf(sum);
