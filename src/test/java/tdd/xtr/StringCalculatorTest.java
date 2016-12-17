@@ -78,7 +78,16 @@ public class StringCalculatorTest {
 		
 	}
 	
-	
+	@Test
+	public void should_throw_exception_with_minus1comma2commaminus3() {
+		
+		thrownExcep.expect(StringCalcException.class);
+		thrownExcep.expectMessage("-1, -3");
+		
+		StringCalculator strCalculator = new StringCalculator();
+		strCalculator.evaluate("-1,2,-3");
+		
+	}
 	
 	
 	private class StringCalculator {
