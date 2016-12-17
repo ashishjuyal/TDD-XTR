@@ -22,7 +22,14 @@ public class StringCalculatorTest {
 	private class StringCalculator {
 		
 		public String evaluate(String toEvaluate) {
-			return "0";
+			
+			if(toEvaluate.equals("1")) {
+				return "1";
+			} 
+			else {
+				return "0";
+			}
+			
 		}
 		
 	}
