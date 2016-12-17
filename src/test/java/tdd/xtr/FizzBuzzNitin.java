@@ -13,5 +13,11 @@ public class FizzBuzzNitin {
 		Assert.assertEquals("1", fizzbuzz.checkfizzbuzz(1));
 		Assert.assertEquals("2", fizzbuzz.checkfizzbuzz(2));
 	}
+	
+	@Test
+	public void should_fizz(){
+		FizzBuzzSrc fizzbuzz = new FizzBuzzSrc();
+		Assert.assertEquals("fizz",fizzbuzz.checkfizzbuzz(3));
+	}
 
 }
