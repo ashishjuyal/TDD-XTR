@@ -39,6 +39,11 @@ public class FizzBuzzTest {
         assertEquals(FizzBuzz.FIZZ, fizzBuzz.evaluate(6));
     }
 
+    @Test public void
+    should_return_Buzz_for_ten() {
+        assertEquals(FizzBuzz.BUZZ, fizzBuzz.evaluate(10));
+    }
+
     private class FizzBuzz {
 
         public static final String FIZZ = "Fizz";
