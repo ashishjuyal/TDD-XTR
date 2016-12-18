@@ -26,20 +26,24 @@ public class FizzBuzzTest {
 
     @Test public void
     should_return_Fizz_for_three() {
-        assertEquals("Fizz", fizzBuzz.evaluate(3));
+        assertEquals(FizzBuzz.FIZZ, fizzBuzz.evaluate(3));
     }
 
     @Test public void
     should_return_Buzz_for_five() {
-        assertEquals("Buzz", fizzBuzz.evaluate(5));
+        assertEquals(FizzBuzz.BUZZ, fizzBuzz.evaluate(5));
     }
 
     private class FizzBuzz {
+
+        public static final String FIZZ = "Fizz";
+        public static final String BUZZ = "Buzz";
+
         public String evaluate(int number) {
             if(number == 3) {
-                return "Fizz";
+                return FIZZ;
             } else if(number == 5) {
-                return "Buzz";
+                return BUZZ;
             }
             return valueOf(number);
         }
