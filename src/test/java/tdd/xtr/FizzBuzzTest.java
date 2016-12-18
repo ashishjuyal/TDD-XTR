@@ -72,7 +72,7 @@ public class FizzBuzzTest {
         }
 
         private boolean isFizzBuzz(int number) {
-            return isFizz(number) && isBuzz(number);
+            return number % 15 == 0;
         }
 
         private boolean isBuzz(int number) {
