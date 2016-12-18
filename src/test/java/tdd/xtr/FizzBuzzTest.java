@@ -12,6 +12,12 @@ public class FizzBuzzTest {
         assertEquals("1", fizzBuzz.evaluate(1));
     }
 
+    @Test public void
+    should_return_two_for_two() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertEquals("2", fizzBuzz.evaluate(2));
+    }
+
     private class FizzBuzz {
         public String evaluate(int number) {
             return "1";
