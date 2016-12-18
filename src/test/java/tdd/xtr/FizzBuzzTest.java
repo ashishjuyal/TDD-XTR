@@ -24,6 +24,11 @@ public class FizzBuzzTest {
         assertEquals("2", fizzBuzz.evaluate(2));
     }
 
+    @Test public void
+    should_return_Fizz_for_three() {
+        assertEquals("Fizz", fizzBuzz.evaluate(3));
+    }
+
     private class FizzBuzz {
         public String evaluate(int number) {
             return valueOf(number);
