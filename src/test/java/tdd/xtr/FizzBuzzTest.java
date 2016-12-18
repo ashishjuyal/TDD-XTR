@@ -45,7 +45,7 @@ public class FizzBuzzTest {
         public static final String BUZZ = "Buzz";
 
         public String evaluate(int number) {
-            if(number == 3) {
+            if(number % 3 == 0) {
                 return FIZZ;
             } else if(number == 5) {
                 return BUZZ;
