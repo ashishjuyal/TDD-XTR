@@ -56,7 +56,7 @@ public class FizzBuzzTest {
         public static final String FIZZ_BUZZ = "FizzBuzz";
 
         public String evaluate(int number) {
-            if(isFizz(number) && isBuzz(number)) {
+            if(isFizzBuzz(number)) {
                 return FIZZ_BUZZ;
             } else if(isFizz(number)) {
                 return FIZZ;
@@ -64,6 +64,10 @@ public class FizzBuzzTest {
                 return BUZZ;
             }
             return valueOf(number);
+        }
+
+        private boolean isFizzBuzz(int number) {
+            return isFizz(number) && isBuzz(number);
         }
 
         private boolean isBuzz(int number) {
