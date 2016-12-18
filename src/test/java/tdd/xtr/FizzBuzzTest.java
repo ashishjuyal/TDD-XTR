@@ -14,7 +14,7 @@ public class FizzBuzzTest {
 
     private class FizzBuzz {
         public String evaluate(int number) {
-            return null;
+            return "1";
         }
     }
 }
