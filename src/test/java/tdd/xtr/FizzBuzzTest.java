@@ -30,8 +30,8 @@ public class FizzBuzzTest {
     }
 
     @Test public void
-    should_return_Buzz_for_four() {
-        assertEquals("Buzz", fizzBuzz.evaluate(4));
+    should_return_Buzz_for_five() {
+        assertEquals("Buzz", fizzBuzz.evaluate(5));
     }
 
     private class FizzBuzz {
