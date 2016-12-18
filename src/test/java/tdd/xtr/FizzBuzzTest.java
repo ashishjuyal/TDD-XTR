@@ -59,13 +59,15 @@ public class FizzBuzzTest {
         public static final String FIZZ = "Fizz";
         public static final String BUZZ = "Buzz";
         public static final String FIZZ_BUZZ = "FizzBuzz";
+        private int number;
 
         public String evaluate(int number) {
-            if(isFizzBuzz(number)) {
+            this.number = number;
+            if(isDivisibleBy(15)) {
                 return FIZZ_BUZZ;
-            } else if(isFizz(number)) {
+            } else if(isDivisibleBy(3)) {
                 return FIZZ;
-            } else if(isBuzz(number)) {
+            } else if(isDivisibleBy(5)) {
                 return BUZZ;
             }
             return valueOf(number);
@@ -81,6 +83,10 @@ public class FizzBuzzTest {
 
         private boolean isFizz(int number) {
             return number % 3 == 0;
+        }
+
+        private boolean isDivisibleBy(int factorOf) {
+            return this.number % factorOf == 0;
         }
     }
 }
