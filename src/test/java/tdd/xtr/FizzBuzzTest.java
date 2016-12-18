@@ -2,6 +2,7 @@ package tdd.xtr;
 
 import org.junit.Test;
 
+import static java.lang.String.valueOf;
 import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
@@ -20,7 +21,7 @@ public class FizzBuzzTest {
 
     private class FizzBuzz {
         public String evaluate(int number) {
-            return "1";
+            return valueOf(number);
         }
     }
 }
