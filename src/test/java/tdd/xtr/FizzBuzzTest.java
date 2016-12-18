@@ -46,17 +46,18 @@ public class FizzBuzzTest {
 
     @Test public void
     should_return_FizzBuzz_for_fifteen() {
-        assertEquals("FizzBuzz", fizzBuzz.evaluate(15));
+        assertEquals(FizzBuzz.FIZZ_BUZZ, fizzBuzz.evaluate(15));
     }
 
     private class FizzBuzz {
 
         public static final String FIZZ = "Fizz";
         public static final String BUZZ = "Buzz";
+        public static final String FIZZ_BUZZ = "FizzBuzz";
 
         public String evaluate(int number) {
             if(isFizz(number) && isBuzz(number)) {
-                return "FizzBuzz";
+                return FIZZ_BUZZ;
             } else if(isFizz(number)) {
                 return FIZZ;
             } else if(isBuzz(number)) {
