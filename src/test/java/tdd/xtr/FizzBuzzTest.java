@@ -52,7 +52,7 @@ public class FizzBuzzTest {
         public String evaluate(int number) {
             if(isFizz(number)) {
                 return FIZZ;
-            } else if(number == 5) {
+            } else if(number % 5 == 0) {
                 return BUZZ;
             }
             return valueOf(number);
