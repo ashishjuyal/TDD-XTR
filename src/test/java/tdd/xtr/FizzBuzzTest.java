@@ -73,18 +73,6 @@ public class FizzBuzzTest {
             return valueOf(number);
         }
 
-        private boolean isFizzBuzz(int number) {
-            return number % 15 == 0;
-        }
-
-        private boolean isBuzz(int number) {
-            return number % 5 == 0;
-        }
-
-        private boolean isFizz(int number) {
-            return number % 3 == 0;
-        }
-
         private boolean isDivisibleBy(int factorOf) {
             return this.number % factorOf == 0;
         }
