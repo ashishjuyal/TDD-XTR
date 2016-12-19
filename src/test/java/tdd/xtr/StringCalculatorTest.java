@@ -1,6 +1,8 @@
 package tdd.xtr;
 
+import org.hamcrest.junit.ExpectedException;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import static java.lang.Integer.valueOf;
@@ -41,9 +43,12 @@ public class StringCalculatorTest {
         assertEquals(15, stringCalculator.add("1\n2,3\n4,5"));
     }
 
-    @Test(expected = Exception.class) public void
-    should_throw_exception_when_negative_number() throws Exception {
-        stringCalculator.add("1\n-2,3");
+    @Rule public ExpectedException expectedException = ExpectedException.none();
+    @Test public void
+    should_throw_exception_when_negative_number_and_return_all_negative_number_in_exception_message() throws Exception {
+        expectedException.expect(Exception.class);
+        expectedException.expectMessage("-2,-3");
+        stringCalculator.add("1\n-2,-3");
     }
 
     private class StringCalculator {
