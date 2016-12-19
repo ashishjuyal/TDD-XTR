@@ -35,10 +35,6 @@ class StringCalculator {
                 .get();
     }
 
-    private String[] extractNumbers(String input) {
-        return input.split(",|\n");
-    }
-
     private List<Integer> extractNumbersAsIntegerList(String input) {
         return Arrays.stream(input.split(",|\n")).map(Integer::valueOf).collect(toList());
     }
