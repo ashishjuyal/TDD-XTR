@@ -34,7 +34,8 @@ public class StringCalculatorTest {
             } else if (input.length() == 1) {
                 return valueOf(input);
             }
-            return 9;
+            String[] numbers = input.split(",");
+            return valueOf(numbers[0]) + valueOf(numbers[1]);
         }
     }
 }
