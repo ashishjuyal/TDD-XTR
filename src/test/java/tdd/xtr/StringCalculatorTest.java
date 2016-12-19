@@ -6,9 +6,12 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.lang.Integer.valueOf;
+import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
@@ -59,6 +62,7 @@ public class StringCalculatorTest {
             if(input.isEmpty()) {
                 return 0;
             }
+
             String[] numbers = extractNumbers(input);
 
             findNegativeNumbers(numbers);
@@ -67,23 +71,20 @@ public class StringCalculatorTest {
         }
 
         private void findNegativeNumbers(String[] numbers) throws Exception {
-            List<Integer> invalidNumbers = new ArrayList<>();
-            for(String number: numbers) {
-                if(valueOf(number) < 0) {
-                    invalidNumbers.add(valueOf(number));
-                }
-            }
-            if(!invalidNumbers.isEmpty()) {
-                throw new Exception(invalidNumbers.toString());
+            List<String> collect = Arrays.stream(numbers)
+                    .filter(num -> valueOf(num) < 0)
+                    .collect(toList());
+
+            if (!collect.isEmpty()) {
+                throw new Exception(collect.toString());
             }
         }
 
         private int getSum(String[] numbers) {
-            int sum = 0;
-            for(String number: numbers) {
-                sum += valueOf(number);
-            }
-            return sum;
+            return Arrays.stream(numbers)
+                    .map(Integer::valueOf)
+                    .reduce((p,n) -> p + n)
+                    .get();
         }
 
         private String[] extractNumbers(String input) {
