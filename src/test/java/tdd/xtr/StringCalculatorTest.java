@@ -41,7 +41,11 @@ public class StringCalculatorTest {
                 return valueOf(input);
             }
             String[] numbers = input.split(",");
-            return valueOf(numbers[0]) + valueOf(numbers[1]);
+            int sum = 0;
+            for(String number: numbers) {
+                sum += valueOf(number);
+            }
+            return sum;
         }
     }
 }
