@@ -36,6 +36,11 @@ public class StringCalculatorTest {
         assertEquals(15, stringCalculator.add("1,2,3,4,5"));
     }
 
+    @Test public void
+    should_return_the_sum_of_numbers_delimited_by_newline() {
+        assertEquals(15, stringCalculator.add("1\n2,3\n4,5"));
+    }
+
     private class StringCalculator {
         public int add(String input) {
             if(input.isEmpty()) {
