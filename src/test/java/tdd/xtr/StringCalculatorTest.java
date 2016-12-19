@@ -41,12 +41,21 @@ public class StringCalculatorTest {
             if(input.isEmpty()) {
                 return 0;
             }
-            String[] numbers = input.split(",");
+            String[] numbers = extractNumbers(input);
+
+            return getSum(numbers);
+        }
+
+        private int getSum(String[] numbers) {
             int sum = 0;
             for(String number: numbers) {
                 sum += valueOf(number);
             }
             return sum;
+        }
+
+        private String[] extractNumbers(String input) {
+            return input.split(",");
         }
     }
 }
