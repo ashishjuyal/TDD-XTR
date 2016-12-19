@@ -22,8 +22,8 @@ class StringCalculator {
     }
 
     private void findNegativeNumbers(String[] numbers, List<Integer> extractedNumbers) throws Exception {
-        List<String> collect = Arrays.stream(numbers)
-                .filter(num -> valueOf(num) < 0)
+        List<Integer> collect = extractedNumbers.stream()
+                .filter(num -> num < 0)
                 .collect(toList());
 
         if (!collect.isEmpty()) {
@@ -32,8 +32,7 @@ class StringCalculator {
     }
 
     private int getSum(String[] numbers, List<Integer> extractedNumbers) {
-        return Arrays.stream(numbers)
-                .map(Integer::valueOf)
+        return extractedNumbers.stream()
                 .reduce((p, n) -> p + n)
                 .get();
     }
