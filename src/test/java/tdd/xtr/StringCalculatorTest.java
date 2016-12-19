@@ -2,6 +2,7 @@ package tdd.xtr;
 
 import org.junit.Test;
 
+import static java.lang.Integer.valueOf;
 import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
@@ -20,7 +21,10 @@ public class StringCalculatorTest {
 
     private class StringCalculator {
         public int add(String input) {
-            return 0;
+            if(input.isEmpty()) {
+                return 0;
+            }
+            return 4;
         }
     }
 }
