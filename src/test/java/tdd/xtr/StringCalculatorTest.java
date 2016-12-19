@@ -60,7 +60,7 @@ public class StringCalculatorTest {
         }
 
         private String[] extractNumbers(String input) {
-            return input.split(",");
+            return input.split(",|\n");
         }
     }
 }
