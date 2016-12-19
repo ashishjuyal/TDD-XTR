@@ -17,6 +17,7 @@ public class StringCalculatorTest {
     should_return_the_same_number_when_single_number() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(4, stringCalculator.add("4"));
+        assertEquals(5, stringCalculator.add("5"));
     }
 
     private class StringCalculator {
