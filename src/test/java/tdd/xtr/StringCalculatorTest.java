@@ -5,13 +5,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static java.lang.Integer.valueOf;
-import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
@@ -57,38 +51,4 @@ public class StringCalculatorTest {
         stringCalculator.add("1\n-2,-3");
     }
 
-    private class StringCalculator {
-        public int add(String input) throws Exception {
-            if(input.isEmpty()) {
-                return 0;
-            }
-
-            String[] numbers = extractNumbers(input);
-
-            findNegativeNumbers(numbers);
-
-            return getSum(numbers);
-        }
-
-        private void findNegativeNumbers(String[] numbers) throws Exception {
-            List<String> collect = Arrays.stream(numbers)
-                    .filter(num -> valueOf(num) < 0)
-                    .collect(toList());
-
-            if (!collect.isEmpty()) {
-                throw new Exception(collect.toString());
-            }
-        }
-
-        private int getSum(String[] numbers) {
-            return Arrays.stream(numbers)
-                    .map(Integer::valueOf)
-                    .reduce((p,n) -> p + n)
-                    .get();
-        }
-
-        private String[] extractNumbers(String input) {
-            return input.split(",|\n");
-        }
-    }
 }
