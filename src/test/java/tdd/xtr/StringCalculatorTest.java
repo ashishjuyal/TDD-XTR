@@ -27,6 +27,12 @@ public class StringCalculatorTest {
         assertEquals(8, stringCalculator.add("3,5"));
     }
 
+    @Test public void
+    should_return_the_sum_of_any_amount_of_numbers() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(15, stringCalculator.add("1,2,3,4,5"));
+    }
+
     private class StringCalculator {
         public int add(String input) {
             if(input.isEmpty()) {
