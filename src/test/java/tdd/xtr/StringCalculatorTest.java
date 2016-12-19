@@ -25,7 +25,7 @@ public class StringCalculatorTest {
             if(input.isEmpty()) {
                 return 0;
             }
-            return 4;
+            return valueOf(input);
         }
     }
 }
