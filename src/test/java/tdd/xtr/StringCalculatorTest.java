@@ -24,6 +24,7 @@ public class StringCalculatorTest {
     should_return_the_sum_of_two_numbers() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(9, stringCalculator.add("4,5"));
+        assertEquals(8, stringCalculator.add("3,5"));
     }
 
     private class StringCalculator {
