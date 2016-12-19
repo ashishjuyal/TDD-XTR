@@ -3,7 +3,6 @@ package tdd.xtr;
 import org.junit.Before;
 import org.junit.Test;
 
-import static java.lang.String.valueOf;
 import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
