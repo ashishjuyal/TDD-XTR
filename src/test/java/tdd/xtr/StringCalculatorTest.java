@@ -41,6 +41,11 @@ public class StringCalculatorTest {
         assertEquals(15, stringCalculator.add("1\n2,3\n4,5"));
     }
 
+    @Test(expected = Exception.class) public void
+    should_throw_exception_when_negative_number() {
+        stringCalculator.add("1\n-2,3");
+    }
+
     private class StringCalculator {
         public int add(String input) {
             if(input.isEmpty()) {
