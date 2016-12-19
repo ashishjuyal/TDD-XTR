@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Integer.valueOf;
 import static org.junit.Assert.assertEquals;
 
@@ -47,7 +50,7 @@ public class StringCalculatorTest {
     @Test public void
     should_throw_exception_when_negative_number_and_return_all_negative_number_in_exception_message() throws Exception {
         expectedException.expect(Exception.class);
-        expectedException.expectMessage("-2,-3");
+        expectedException.expectMessage("-2, -3");
         stringCalculator.add("1\n-2,-3");
     }
 
@@ -64,10 +67,14 @@ public class StringCalculatorTest {
         }
 
         private void findNegativeNumbers(String[] numbers) throws Exception {
+            List<Integer> invalidNumbers = new ArrayList<>();
             for(String number: numbers) {
                 if(valueOf(number) < 0) {
-                    throw new Exception();
+                    invalidNumbers.add(valueOf(number));
                 }
+            }
+            if(!invalidNumbers.isEmpty()) {
+                throw new Exception(invalidNumbers.toString());
             }
         }
 
