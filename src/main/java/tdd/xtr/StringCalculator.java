@@ -12,16 +12,14 @@ class StringCalculator {
             return 0;
         }
 
-        String[] numbers = extractNumbers(input);
+        List<Integer> numbers = extractNumbersAsIntegerList(input);
 
-        List<Integer> extractedNumbers = extractNumbersAsIntegerList(input);
+        findNegativeNumbers(numbers);
 
-        findNegativeNumbers(numbers, extractedNumbers);
-
-        return getSum(numbers, extractedNumbers);
+        return getSum(numbers);
     }
 
-    private void findNegativeNumbers(String[] numbers, List<Integer> extractedNumbers) throws Exception {
+    private void findNegativeNumbers(List<Integer> extractedNumbers) throws Exception {
         List<Integer> collect = extractedNumbers.stream()
                 .filter(num -> num < 0)
                 .collect(toList());
@@ -31,7 +29,7 @@ class StringCalculator {
         }
     }
 
-    private int getSum(String[] numbers, List<Integer> extractedNumbers) {
+    private int getSum(List<Integer> extractedNumbers) {
         return extractedNumbers.stream()
                 .reduce((p, n) -> p + n)
                 .get();
