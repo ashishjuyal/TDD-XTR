@@ -20,6 +20,12 @@ public class StringCalculatorTest {
         assertEquals(5, stringCalculator.add("5"));
     }
 
+    @Test public void
+    should_return_the_sum_of_two_numbers() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(9, stringCalculator.add("4,5"));
+    }
+
     private class StringCalculator {
         public int add(String input) {
             if(input.isEmpty()) {
